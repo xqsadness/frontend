@@ -10,6 +10,7 @@ function Register() {
     name: "",
     role :"user",
     password: "",
+    email: ''
   });
 
   const onRegister = async (e) => {
@@ -35,8 +36,9 @@ function Register() {
         </div>
         <div class="modal-body">
           <form >
-            <div class="form-group">
-              <i class="fa fa-user"></i>
+
+          <div class="form-group">
+          <i class="fa fa-user"></i> 
               <input
                 type="text"
                 class="form-control"
@@ -45,13 +47,24 @@ function Register() {
                 onChange={(e) => setData({ ...data, name: e.target.value })}
               />
             </div>
-            
+
             <div class="form-group">
-            <i class="fa-solid fa-envelope"></i>
+           <i class="fa-solid fa-envelope"></i>
               <input
                 type="text"
                 class="form-control"
                 placeholder="Email"
+                required="required"
+                onChange={(e) => setData({ ...data, email: e.target.value })}
+              />
+            </div>
+            
+            <div class="form-group">
+            <i class="fa fa-user"></i> 
+              <input
+                type="text"
+                class="form-control"
+                placeholder="UserName"
                 required="required"
                 onChange={(e) => setData({ ...data, username: e.target.value })}
               />

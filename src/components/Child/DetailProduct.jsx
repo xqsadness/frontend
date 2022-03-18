@@ -6,7 +6,7 @@ import { API_PRODUCT_DETAIL } from "./../utils/const";
 import "./css/detail.css";
 import { Button, Icon } from "semantic-ui-react";
 import { toast, ToastContainer } from "react-toastify";
-import { formatMoney } from './Format';
+import { formatMoney } from "./Format";
 
 function DetailProduct({ data }) {
   const [post, setPost] = useState([]);
@@ -54,38 +54,37 @@ function DetailProduct({ data }) {
         images: post.images,
         price: post.price,
         id: post._id,
-        descriptions: post.descriptions
+        descriptions: post.descriptions,
       };
       console.log(ListCart);
       ListCart.push(cartItem);
       localStorage.setItem("Cart", JSON.stringify(ListCart));
     }
 
-    // toast.success("Da them vao gio hang", {
-    //   position: "bottom-left",
-    //   autoClose: 3000,
-    //   style: {position: 'relative', zIndex: 200}
-    // });
-    alert("Thêm thành công")
+    toast.success("Da them vao gio hang", {
+      position: "bottom-right",
+      autoClose: 2000,
+    });
+   
   };
 
-  const like =() => {
-    alert('Like thành công')
-  }
+  const like = () => {
+    alert("Like thành công");
+  };
 
   const num = 1;
   if (post) {
     <ToastContainer
-    position="bottom-right"
-    autoClose={2000}
-    hideProgressBar={false}
-    newestOnTop={false}
-    closeOnClick
-    rtl={false}
-    pauseOnFocusLoss
-    draggable
-    pauseOnHover
-  />
+      position="bottom-right"
+      autoClose={2000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />;
     return (
       <div class="container">
         <div class="cardd">
@@ -176,10 +175,10 @@ function DetailProduct({ data }) {
                     ></i>
                   </Button>
                   <Button
-                  // onClick={
-                  //   // () => like()
-                   
-                  // }
+                    // onClick={
+                    //   // () => like()
+
+                    // }
                     style={{
                       marginTop: "15px",
                       width: "170px",

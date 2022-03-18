@@ -9,3 +9,6 @@ export const API_USER_LOGIN = `${API}/api/users/login`;
 export const API_USER_REGISTER = `${API}/api/users/register`;
 
 
+export const API_USER_USERS = `${API}/api/users`;
+
+

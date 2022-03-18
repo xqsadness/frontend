@@ -75,9 +75,9 @@ function Header({ onSearch }) {
                         className="fa fa-shopping-cart"
                       ></i>
                     </Link>
-                    <span className="badge badge-pill badge-danger notify">
+                    {/* <span className="badge badge-pill badge-danger notify">
                       0
-                    </span>
+                    </span> */}
                   </div>
                   <div className="widget-header icontext">
                     <Link

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
-import { formatMoney } from './Format';
-import { toast } from 'react-toastify';
+import { formatMoney } from "./Format";
+import { toast } from "react-toastify";
 
 function Product(props) {
-  const { images, price, name, __v,descriptions, _id } = props;
+  const { images, price, name, __v, descriptions, _id } = props;
   const addCart = (item) => {
     console.log("item", name);
     // let data = [
@@ -18,7 +18,6 @@ function Product(props) {
     //   },
     // ];
   };
-
 
   const [post, setPost] = useState([]);
 
@@ -43,16 +42,18 @@ function Product(props) {
         images: images,
         price: price,
         id: _id,
-        descriptions: descriptions
+        descriptions: descriptions,
       };
       console.log(ListCart);
       ListCart.push(cartItem);
       localStorage.setItem("Cart", JSON.stringify(ListCart));
     }
 
-    alert('them thanh cong')
+    toast.success("Thêm thành công !", {
+      position: "bottom-right",
+      autoClose: 3000,
+    });
   };
-
 
   const css = {
     backgroundColor: "#51a700",
@@ -63,14 +64,20 @@ function Product(props) {
     width: "10px",
   };
   return (
-    <div href="#"   className="card card-product-grid">
-      <Link  style={{ height: "300px"}} to={`/detail/${_id}`} class="img-wrap">
+    
+    <div href="#" className="card card-product-grid">
+      <Link style={{ height: "300px" }} to={`/detail/${_id}`} class="img-wrap">
         {" "}
-        <img style={{width: "100%"}} src={images} />{" "}
+        <img style={{ width: "100%" }} src={images} />{" "}
       </Link>
       <figcaption className="info-wrap">
         <a
-          style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px",height:"42px" }}
+          style={{
+            fontSize: "20px",
+            fontWeight: "bold",
+            marginBottom: "10px",
+            height: "42px",
+          }}
           href="#"
           className="title"
         >
@@ -78,12 +85,17 @@ function Product(props) {
         </a>
 
         <div
-          style={{ color: "#daa520", marginBottom: "7px", fontSize: "16px",height:"25px" }}
+          style={{
+            color: "#daa520",
+            marginBottom: "7px",
+            fontSize: "16px",
+            height: "25px",
+          }}
           className="price mt-1"
         >
-          <span style={css} className="dot--stocking"></span> {formatMoney(Number(price)) } ₫
+          <span style={css} className="dot--stocking"></span>{" "}
+          {formatMoney(Number(price))} ₫
         </div>
-        
       </figcaption>
 
       <Button

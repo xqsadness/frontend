@@ -11,6 +11,7 @@ import ProductScreen from "./../pages/ProductScreen";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 function Admin() {
   const [data, setData] = useState([]);
@@ -91,6 +92,12 @@ function Admin() {
                     >
                       Create Product
                     </a>
+                  </li>
+                  <li>
+                    <Link to={'/user'}
+                    >
+                      User
+                    </Link>
                   </li>
                   <div
                     style={{ textAlign: "left" }}
